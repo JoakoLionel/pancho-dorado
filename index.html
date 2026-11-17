@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pancho Dorado | Panchos para retirar o pedir a domicilio</title>
+  <meta name="description" content="Panchos hechos al momento en Villa Crespo. Hacé tu pedido online con nuestro bot, para retirar o recibir en tu casa.">
+  <meta name="theme-color" content="#f4b400">
+  <meta property="og:title" content="Pancho Dorado">
+  <meta property="og:description" content="Panchos hechos al momento. Hacé tu pedido con el bot de la página.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f4b400'/%3E%3Crect x='6' y='24' width='52' height='18' rx='9' fill='%23c8301e'/%3E%3Cpath d='M10 33q10-7 20 0t20 0' stroke='%23f4b400' stroke-width='4' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="saltar" href="#menu">Saltar al menú</a>
+
+  <header class="cabecera">
+    <div class="envoltorio cabecera-fila">
+      <a class="marca" href="#inicio" aria-label="Pancho Dorado, inicio">
+        <span class="marca-icono" aria-hidden="true"></span>
+        <span id="marcaNombre">Pancho Dorado</span>
+      </a>
+      <nav class="navegacion" aria-label="Principal">
+        <a href="#menu">Menú</a>
+        <a href="#como">Cómo pedir</a>
+        <a href="#visita">Dónde estamos</a>
+      </nav>
+      <button class="boton boton-carrito" id="botonAbrirCarrito" type="button" aria-haspopup="dialog">
+        Hacer pedido <span class="contador" id="contadorCarrito">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- PORTADA -->
+    <section class="portada" aria-labelledby="titulo">
+      <div class="envoltorio portada-grilla">
+        <div class="portada-texto">
+          <p class="estado" id="estadoLocal" role="status">
+            <span class="estado-punto" aria-hidden="true"></span>
+            <span id="estadoTexto">Verificando horario…</span>
+          </p>
+          <h1 id="titulo">Panchos hechos al momento, para retirar o recibir en tu casa.</h1>
+          <p class="portada-bajada">Salchicha a la parrilla, pan de viena calentito y salsas de la casa. Pedilo acá mismo: nuestro bot te toma el pedido en un minuto.</p>
+          <div class="acciones">
+            <button class="boton" type="button" id="botonPortadaPedido">Pedir con el bot</button>
+            <a class="enlace" href="#menu">Ver el menú</a>
+          </div>
+          <p class="aviso-reservas">No tomamos reservas de mesa por este medio: solo pedidos para retiro o delivery.</p>
+        </div>
+        <div class="portada-foto">
+          <picture>
+            <img src="assets/img/hero-960.jpg" srcset="assets/img/hero-500.jpg 500w, assets/img/hero-960.jpg 960w"
+                 sizes="(max-width: 860px) 100vw, 50vw" width="960" height="638"
+                 alt="Pancho a la parrilla con ensalada de repollo y mostaza antigua" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENÚ -->
+    <section class="seccion" id="menu" aria-labelledby="tituloMenu">
+      <div class="envoltorio">
+        <h2 id="tituloMenu">El menú</h2>
+        <p class="seccion-bajada">Tocá “Agregar” para ir sumando, o pedile directamente al bot.</p>
+        <div class="menu-tarjetas" id="menuTarjetas"></div>
+        <h3 class="subtitulo">Para tomar</h3>
+        <ul class="menu-lista" id="menuBebidas"></ul>
+      </div>
+    </section>
+
+    <!-- CÓMO PEDIR -->
+    <section class="seccion seccion-mostaza" id="como" aria-labelledby="tituloComo">
+      <div class="envoltorio">
+        <h2 id="tituloComo">Cómo pedir</h2>
+        <ol class="pasos">
+          <li>
+            <span class="paso-numero" aria-hidden="true">1</span>
+            <h3>Abrí el bot</h3>
+            <p>Tocá “Hacer pedido” y el bot te muestra el menú. Elegís con un toque o escribiendo.</p>
+          </li>
+          <li>
+            <span class="paso-numero" aria-hidden="true">2</span>
+            <h3>Decile cómo lo querés</h3>
+            <p>Cantidades, retiro o delivery, tu nombre y alguna aclaración. Si algo está mal, te lo vuelve a preguntar.</p>
+          </li>
+          <li>
+            <span class="paso-numero" aria-hidden="true">3</span>
+            <h3>Confirmá y listo</h3>
+            <p>Revisás el total, respondés “sí” y recibís tu número de pedido con el detalle.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DÓNDE ESTAMOS -->
+    <section class="seccion" id="visita" aria-labelledby="tituloVisita">
+      <div class="envoltorio visita-grilla">
+        <div>
+          <h2 id="tituloVisita">Dónde estamos</h2>
+          <p class="visita-barrio" id="visitaBarrio">Villa Crespo, CABA</p>
+          <dl class="datos">
+            <div><dt>Horario</dt><dd id="visitaHorario">Todos los días de 19:30 a 23:30 hs</dd></div>
+            <div><dt>Modalidad</dt><dd>Retiro en el local o delivery (<span id="visitaDelivery">$1.500</span>)</dd></div>
+            <div><dt>Pagos</dt><dd>Efectivo o transferencia al retirar o recibir el pedido</dd></div>
+          </dl>
+          <div class="acciones">
+            <button class="boton" type="button" id="botonVisitaPedido">Pedir con el bot</button>
+          </div>
+        </div>
+        <div class="visita-bloque" aria-hidden="true">
+          <span>Hecho</span><span>al</span><span>momento.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="envoltorio pie-fila">
+      <p><strong id="pieNombre">Pancho Dorado</strong> · Villa Crespo, CABA</p>
+      <p class="pie-creditos">Fotos: jeffreyw y Benimoto (CC BY 2.0); Kolforn y Kritzolina (CC BY-SA 4.0), vía Wikimedia Commons.</p>
+    </div>
+  </footer>
+
+  <button class="flotante" id="botonFlotante" type="button" aria-label="Abrir el bot de pedidos">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+    <span>Pedir</span>
+  </button>
+
+  <!-- BOT DE PEDIDOS (panel lateral) -->
+  <div class="velo" id="velo" hidden></div>
+  <aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitulo" hidden>
+    <div class="panel-cabecera">
+      <h2 id="panelTitulo">Panchi, bot de pedidos</h2>
+      <button class="cerrar" type="button" id="botonCerrarPanel" aria-label="Cerrar el bot">&times;</button>
+    </div>
+    <p class="panel-aviso" id="avisoCerrado" hidden></p>
+    <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-label="Conversación con el bot" tabindex="0"></div>
+    <div class="chat-chips" id="chatChips"></div>
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <label class="solo-lector" for="chatInput">Escribí tu mensaje</label>
+      <input id="chatInput" type="text" maxlength="140" placeholder="Escribí acá o tocá una opción">
+      <button class="boton" type="submit">Enviar</button>
+    </form>
+  </aside>
+
+  <script src="js/config.js"></script>
+  <script src="js/ia.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
